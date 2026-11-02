@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // The personal WGT is assembled on the user's computer. No credentials are sent to CI.
 import {createInterface} from 'node:readline/promises';
-import {cpSync,existsSync,mkdtempSync,mkdirSync,readFileSync,rmSync,symlinkSync,writeFileSync} from 'node:fs';
+import {copyFileSync,cpSync,existsSync,mkdtempSync,mkdirSync,readFileSync,rmSync,symlinkSync,writeFileSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {tmpdir} from 'node:os';
 import {dirname,join,resolve} from 'node:path';
@@ -62,8 +62,10 @@ function compile(settings,locale) {
     }
     checkBinaryAssets(join(temp,'public'),join(temp,'build/tizen'));
     packageTizen({builtDir:join(temp,'build/tizen'),
-      outputFile:join(ROOT,'dist/Lampa-Personal-Edition.wgt'),
+      outputFile:join(ROOT,'dist/Lampa-Multilingual.wgt'),
       iconFile:join(ROOT,'personal/assets/icon.png'),settings});
+    // Preserve the legacy output path for older tooling; visible product name is Multilingual.
+    copyFileSync(join(ROOT,'dist/Lampa-Multilingual.wgt'),join(ROOT,'dist/Lampa-Personal-Edition.wgt'));
   }finally{rmSync(temp,{recursive:true,force:true});}
 }
 const argv=process.argv.slice(2);
