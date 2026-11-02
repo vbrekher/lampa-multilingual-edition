@@ -2,7 +2,7 @@
 
 ## What the builder stores
 
-Lampa Personal Edition puts chosen language, optional TorrServer URL, and plugin policy inside a locally generated WGT. **These fields are not encrypted.** The builder does not ask for passwords, CUB credentials, API keys or other secrets. URLs with embedded username/password, query strings or fragments are rejected.
+Lampa Multilingual puts chosen language, optional TorrServer URL, and plugin policy inside a locally generated WGT. **These fields are not encrypted.** The builder does not ask for passwords, CUB credentials, API keys or other secrets. URLs with embedded username/password, query strings or fragments are rejected.
 
 The build runs locally and `dist/` is Git-ignored. Do not publish personal WGTs, CI artifacts containing a personal configuration, or screenshots showing private URLs.
 
@@ -19,3 +19,7 @@ The build runs locally and `dist/` is Git-ignored. Do not publish personal WGTs,
 Open a GitHub issue with a sanitized reproducer containing no passwords, tokens, authenticated URLs or personal WGT files. If a private security-reporting channel is available on GitHub, use it for confidential details. Rotate compromised credentials promptly.
 
 See the upstream [Lampa source](https://github.com/yumata/lampa-source) and preserved [GPL v2 license](LICENSE). Upstream package metadata and LICENSE currently disagree; we do not claim that this resolves that upstream licensing ambiguity.
+
+## Local visual Builder
+
+The GUI is served only on `127.0.0.1`, applies origin and one-time-process token checks to build requests, and invokes the existing CLI without a shell. No user settings or personal WGT uploads are sent to a cloud builder. Use this only on a trusted local computer; do not reverse-proxy the local service or expose it on the Internet. Any TorrServer address stored in the WGT is unencrypted, so never include credentials or access tokens in it.
