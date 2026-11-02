@@ -1,16 +1,16 @@
-// Lampa Personal Edition — terminal UI messages only.
+// Lampa Multilingual — terminal UI messages only.
 // Upstream Lampa TV interface languages are independent from the builder language.
 export const BUILDER_LANGUAGES = Object.freeze(['en', 'ru', 'nl']);
 const messages = {
   en: {
-    title: 'Lampa Personal Edition — local Samsung Tizen build',
+    title: 'Lampa Multilingual — local Samsung Tizen build',
     intro: 'Lampa hosting is not required. The builder does not ask for passwords.',
     interfaceLanguage: 'Lampa interface language [nl/de/tr/en/zh/hi/es/ar/fr/bn/pt/id/ur/ru/uk/be/bg/cs/he/pl/ro] (Enter={default}): ',
     serverUrl: 'TorrServer URL (optional; Enter to skip): ',
     parserType: 'Parser backend [jackett/prowlarr/torrserver] (Enter=jackett): ',
     plugins: 'Enable third-party plugins? [y/N]: ',
     compiling: 'Building Lampa assets locally...',
-    ready: 'Ready: dist/Lampa-Personal-Edition.wgt',
+    ready: 'Ready: dist/Lampa-Multilingual.wgt',
     install: 'Install using Apps2Samsung > Custom WGT. Do not share personal packages.',
     httpWarning: 'HTTP is not encrypted. Use it only on a trusted home network.',
     pluginsWarning: 'Warning: third-party plugins can run remote JavaScript.',
@@ -41,14 +41,14 @@ const messages = {
     }
   },
   ru: {
-    title: 'Lampa Personal Edition — локальная сборка для Samsung Tizen',
+    title: 'Lampa Multilingual — локальная сборка для Samsung Tizen',
     intro: 'Хостинг Lampa не требуется. Сборщик не спрашивает пароли.',
     interfaceLanguage: 'Язык интерфейса Lampa [nl/de/tr/en/zh/hi/es/ar/fr/bn/pt/id/ur/ru/uk/be/bg/cs/he/pl/ro] (Enter={default}): ',
     serverUrl: 'Адрес TorrServer (необязательно; Enter — пропустить): ',
     parserType: 'Тип парсера [jackett/prowlarr/torrserver] (Enter=jackett): ',
     plugins: 'Разрешить сторонние плагины? [д/Н]: ',
     compiling: 'Собираем Lampa из локальных исходников...',
-    ready: 'Готово: dist/Lampa-Personal-Edition.wgt',
+    ready: 'Готово: dist/Lampa-Multilingual.wgt',
     install: 'Установи через Apps2Samsung > Custom WGT. Не передавай другим персональный пакет.',
     httpWarning: 'HTTP не шифрует трафик. Используй его только в доверенной домашней сети.',
     pluginsWarning: 'Внимание: сторонние плагины могут исполнять удалённый JavaScript.',
@@ -79,14 +79,14 @@ const messages = {
     }
   },
   nl: {
-    title: 'Lampa Personal Edition — lokaal bouwen voor Samsung Tizen',
+    title: 'Lampa Multilingual — lokaal bouwen voor Samsung Tizen',
     intro: 'Je hoeft Lampa niet zelf te hosten. De bouwer vraagt niet om wachtwoorden.',
     interfaceLanguage: 'Taal van Lampa op de tv [nl/de/tr/en/zh/hi/es/ar/fr/bn/pt/id/ur/ru/uk/be/bg/cs/he/pl/ro] (Enter={default}): ',
     serverUrl: 'TorrServer-adres (optioneel; Enter om over te slaan): ',
     parserType: 'Parser-type [jackett/prowlarr/torrserver] (Enter=jackett): ',
     plugins: 'Externe plug-ins inschakelen? [j/N]: ',
     compiling: 'Lampa wordt lokaal opgebouwd...',
-    ready: 'Klaar: dist/Lampa-Personal-Edition.wgt',
+    ready: 'Klaar: dist/Lampa-Multilingual.wgt',
     install: 'Installeer via Apps2Samsung > Custom WGT. Deel je persoonlijke pakket niet.',
     httpWarning: 'HTTP is niet versleuteld. Gebruik het alleen op een vertrouwd thuisnetwerk.',
     pluginsWarning: 'Waarschuwing: externe plug-ins kunnen JavaScript van derden uitvoeren.',
