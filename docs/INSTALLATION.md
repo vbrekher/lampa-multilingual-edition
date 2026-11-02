@@ -1,4 +1,4 @@
-# Install Lampa Personal Edition
+# Install Lampa Multilingual
 
 This is the detailed setup for a locally compiled Samsung Tizen WGT.
 
@@ -22,20 +22,20 @@ Follow [Samsung's official developer-mode guide](https://developer.samsung.com/s
 ~~~bash
 git clone https://github.com/vbrekher/lampa-personal-edition.git
 cd lampa-personal-edition
-npm install
+npm ci
 npm run test:personal
-npm run build:personal
+npm run builder
 ~~~
 
-The terminal prompts are in English by default. Choose the Lampa TV interface language, optional TorrServer URL, and whether to allow third-party plugins (default: no). To use translated terminal prompts, run `npm run build:personal -- --builder-language ru` for Russian or `npm run build:personal -- --builder-language nl` for Dutch; these commands remain interactive. The Dutch builder defaults the TV interface to English because upstream Lampa has no Dutch TV language. The URL should include `http://` or `https://`, with no username/password, tokens or query parameters.
+The recommended command opens a local visual Builder in your browser. Follow the steps and download the generated WGT; the file also appears under `dist/`. For terminal-only builds, run `npm run build:multilingual` instead. The terminal prompts are in English by default. Choose the Lampa TV interface language, optional TorrServer URL, and whether to allow third-party plugins (default: no). To use translated terminal prompts, run `npm run build:multilingual -- --builder-language ru` for Russian or `npm run build:multilingual -- --builder-language nl` for Dutch; these commands remain interactive. All 21 TV interface languages, including Dutch, are bundled in every WGT; the initial choice can be changed on the TV. The URL should include `http://` or `https://`, with no username/password, tokens or query parameters.
 
 To build without questions:
 
 ~~~bash
-npm run build:personal -- --language en --plugins off
+npm run build:multilingual -- --language en --plugins off
 ~~~
 
-The output is `dist/Lampa-Personal-Edition.wgt`. The source tree is unchanged: the build happens inside a temporary directory.
+The output is `dist/Lampa-Multilingual.wgt`. The source tree is unchanged: the build happens inside a temporary directory.
 
 ## Step 3 — install through Apps2Samsung
 
@@ -43,7 +43,7 @@ The output is `dist/Lampa-Personal-Edition.wgt`. The source tree is unchanged: t
 2. Select your Samsung TV or enter its IP.
 3. Choose **Custom WGT** and select the file from `dist/`.
 4. Follow certificate or re-signing prompts if Apps2Samsung requests them.
-5. Launch **Lampa Personal Edition** from Samsung Apps.
+5. Launch **Lampa Multilingual** from Samsung Apps.
 
 This personal app uses ID `L4mpaPers0.LampaPersonal` and is separate from upstream Lampa.
 
@@ -56,8 +56,8 @@ Verify the home screen, navigation, catalogue data, and any self-hosted TorrServ
 ~~~bash
 cd lampa-personal-edition
 git pull --ff-only
-npm install
-npm run build:personal
+npm ci
+npm run build:multilingual
 ~~~
 
 Then reinstall the generated WGT. Do not upload it to GitHub.
@@ -72,6 +72,6 @@ The build process uses Node.js and Unix CLI tools. Windows + WSL2 may work but i
 - Compiling assets locally does not mean the app runs offline; upstream Lampa still contacts external services.
 - No CUB account or TV password is embedded.
 - Enabling plugins allows remote plugin JavaScript.
-- The Personal Edition build has not yet passed on-device certification.
+- Lampa Multilingual has not yet passed on-device certification.
 
 See [Troubleshooting](TROUBLESHOOTING.md) and [Security](../SECURITY.md).
