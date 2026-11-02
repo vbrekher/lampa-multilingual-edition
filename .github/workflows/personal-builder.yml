@@ -1,4 +1,4 @@
-name: Lampa Personal Edition verification
+name: Lampa Multilingual verification
 on:
   push:
     branches: [main, feature/personal-edition-builder]
@@ -15,6 +15,7 @@ on:
       - '.github/ISSUE_TEMPLATE/**'
       - '.github/pull_request_template.md'
       - 'package.json'
+      - 'package-lock.json'
       - 'src/interaction/extensions/**'
       - 'src/interaction/settings/**'
       - '.github/workflows/personal-builder.yml'
@@ -66,21 +67,22 @@ jobs:
           path: reports/localization/
       - name: Compile real upstream Lampa and create a generic smoke WGT
         run: |
-          if ! npm run build:personal -- --language ru --plugins off; then
+          if ! npm run build:multilingual -- --language ru --plugins off; then
             echo '=== Sanitized public-source build diagnostic ==='
             if [ -f dist/build-error.log ]; then sed -n '1,180p' dist/build-error.log; fi
             exit 1
           fi
       - name: Verify smoke artifact without publishing it
         run: |
-          unzip -tq dist/Lampa-Personal-Edition.wgt
-          unzip -p dist/Lampa-Personal-Edition.wgt index.html | grep 'personal-config.js'
-          unzip -p dist/Lampa-Personal-Edition.wgt config.xml | grep 'L4mpaPers0.LampaPersonal'
-          if unzip -Z -1 dist/Lampa-Personal-Edition.wgt | grep -Fx 'loader.js'; then
+          unzip -tq dist/Lampa-Multilingual.wgt
+          unzip -p dist/Lampa-Multilingual.wgt index.html | grep 'personal-config.js'
+          unzip -p dist/Lampa-Multilingual.wgt config.xml | grep 'L4mpaPers0.LampaPersonal'
+          if unzip -Z -1 dist/Lampa-Multilingual.wgt | grep -Fx 'loader.js'; then
             echo 'Remote loader unexpectedly packaged'
             exit 1
           fi
-          rm -f dist/Lampa-Personal-Edition.wgt
+          unzip -p dist/Lampa-Multilingual.wgt config.xml | grep 'Lampa Multilingual'
+          rm -f dist/Lampa-Multilingual.wgt dist/Lampa-Personal-Edition.wgt
       - name: Dependency vulnerability audit (must reach zero before release)
         run: npm audit --audit-level=low
       # Only public-source audit evidence is uploaded; personal WGT packages are not.
