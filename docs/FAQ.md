@@ -1,5 +1,9 @@
 # Frequently asked questions
 
+### Where can I build the WGT?
+
+Use the local visual GUI with `npm run builder` after `npm ci`, or keep using the CLI with `npm run build:multilingual`. The public website only previews the workflow; it does not build or collect personal packages.
+
 ### Do I need to host Lampa myself?
 
 **No.** Lampa's application code is packaged in your own WGT. The app still uses external services for catalogue/metadata and optional playback sources.
@@ -10,7 +14,7 @@ No. Leave the URL empty to create a Lampa catalogue build. If you want TorrServe
 
 ### Can I install it alongside the original Lampa?
 
-The personal WGT declares a different Tizen app ID: `L4mpaPers0.LampaPersonal`. The installation is intended not to overwrite the original application.
+The multilingual WGT declares a different Tizen app ID: `L4mpaPers0.LampaPersonal`. The installation is intended not to overwrite the original application.
 
 ### Can I install a prebuilt WGT from GitHub Releases?
 
@@ -44,6 +48,6 @@ No actual Samsung Tizen installation/playback acceptance has yet been recorded f
 
 Windows Subsystem for Linux 2 might work with the required tools, but it is not verified as a supported build platform.
 
-### Is Lampa Personal Edition the official Lampa?
+### Is Lampa Multilingual the official Lampa?
 
 No. It is an independent GPL-source fork with its own personal builder. Original Lampa is [yumata/lampa-source](https://github.com/yumata/lampa-source).
