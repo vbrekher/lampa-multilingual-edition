@@ -3,8 +3,8 @@
 ## Confirmed
 
 - Upstream fork baseline: Lampa 3.x source at `3c658ffb4047d62a605389a1039281288836d6b8`.
-- Personal-builder and localization tests: source configuration, ZIP packaging, multilingual CLI and documentation consistency (count shown by current CI).
-- GitHub Actions real compile smoke: Gulp compiled the copied upstream source, generated a WGT, and `unzip -tq` verified the archive.
+- Local Builder and localization tests: source configuration, ZIP packaging, multilingual CLI and documentation consistency (count shown by current CI).
+- GitHub Actions previous compile smoke: Gulp compiled the copied upstream source, generated a WGT, and `unzip -tq` verified the archive.
 - Personal app ID separate from original Lampa: `L4mpaPers0.LampaPersonal`.
 - WGT excludes upstream remote `loader.js`.
 
@@ -34,4 +34,4 @@ The original Lampa source includes Tizen support and the WGT declares `required_
 7. Rebuild with a different language and verify settings persist across restarts.
 8. Verify original Lampa installation remains unaffected.
 
-Send compatibility reports through a redacted GitHub issue. Never upload a personal WGT or authenticated media URL.
+Send compatibility reports as a redacted pull request or project discussion; GitHub Issues may be disabled. Never upload a personal WGT or authenticated media URL.
