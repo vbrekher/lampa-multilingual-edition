@@ -1,7 +1,7 @@
 {
   "name": "lampa-personal-edition",
   "version": "0.1.0",
-  "description": "Local personal Samsung Tizen WGT builder for Lampa; user-configured language and TorrServer.",
+  "description": "Multilingual community Lampa for Samsung Tizen: 21 interface languages, RTL, and private local WGT Builder.",
   "main": "index.js",
   "scripts": {
     "start": "gulp",
@@ -13,7 +13,10 @@
     "i18n:report": "node tools/i18n-audit.mjs",
     "i18n:strict": "node tools/i18n-audit.mjs --strict",
     "i18n:inventory": "node tools/i18n-source-audit.mjs",
-    "i18n:source-check": "node tools/i18n-source-review.mjs"
+    "i18n:source-check": "node tools/i18n-source-review.mjs",
+    "builder": "node personal/builder-web.mjs",
+    "build:multilingual": "node personal/build.mjs",
+    "site:preview": "node personal/site-preview.mjs"
   },
   "author": "unk",
   "license": "ISC",
