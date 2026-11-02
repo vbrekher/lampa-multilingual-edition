@@ -1,8 +1,8 @@
-# Lampa Personal Edition — Nederlandse handleiding
+# Lampa Multilingual — Nederlandse handleiding
 
 **Je eigen Lampa-app voor Samsung-tv's, ingesteld op je computer in plaats van met de afstandsbediening.**
 
-Lampa Personal Edition is een onofficiële fork van [Lampa](https://github.com/yumata/lampa-source). Je bouwt de app lokaal, kiest je taal en vult eventueel het adres van je eigen TorrServer in. Daarna installeer je het WGT-bestand met Apps2Samsung.
+Lampa Multilingual is een onofficiële fork van [Lampa](https://github.com/yumata/lampa-source). Je bouwt de app lokaal, kiest je taal en vult eventueel het adres van je eigen TorrServer in. Daarna installeer je het WGT-bestand met Apps2Samsung.
 
 Je hebt **geen aparte Lampa-server, VPS of Bunny-account nodig**. Films, series en een torrentserver worden niet meegeleverd; de app gebruikt online metadatadiensten en je eigen ingestelde bronnen.
 
@@ -16,6 +16,16 @@ Je hebt **geen aparte Lampa-server, VPS of Bunny-account nodig**. Films, series 
 - [Apps2Samsung](https://github.com/Apps2Samsung/Apps2Samsung/releases).
 - Optioneel: een eigen TorrServer die bereikbaar is vanaf je televisie.
 
+## Visuele Builder (aanbevolen)
+
+Start na het klonen en installeren van de repository met `npm ci` de lokale grafische Builder:
+
+~~~bash
+npm run builder
+~~~
+
+De browser opent een privélokaal stappenplan: kies een van 21 tv-talen, vul eventueel TorrServer in, kies de parser, beheer de plug-ininstelling en bouw een echte `Lampa-Multilingual.wgt`. Builder-berichten zijn beschikbaar in Nederlands, Engels en Russisch. De app zelf biedt alle 21 talen. Er worden geen persoonlijke instellingen naar een cloudbuilder gestuurd.
+
 ## 2. Maak je persoonlijke WGT
 
 Open Terminal op je computer:
@@ -23,8 +33,8 @@ Open Terminal op je computer:
 ~~~bash
 git clone https://github.com/vbrekher/lampa-personal-edition.git
 cd lampa-personal-edition
-npm install
-npm run build:personal -- --builder-language nl
+npm ci
+npm run build:multilingual -- --builder-language nl
 ~~~
 
 Zo verschijnen de vragen en foutmeldingen van de bouwer in het **Nederlands**. Met `--builder-language` kies je de taal van de terminal; met `--language` kies je de interfacetaal van Lampa op de televisie.
@@ -52,7 +62,7 @@ Het script vraagt **niet** naar je wachtwoord, CUB-account of API-tokens. Zet ge
 Na een geslaagde build staat het volgende bestand klaar:
 
 ~~~text
-dist/Lampa-Personal-Edition.wgt
+dist/Lampa-Multilingual.wgt
 ~~~
 
 De app-code staat lokaal in het WGT-bestand; de oorspronkelijke loader die de hoofdapp van een publieke website downloadt, wordt niet meegeleverd.
@@ -65,7 +75,7 @@ De app-code staat lokaal in het WGT-bestand; de oorspronkelijke loader die de ho
 4. Start Apps2Samsung op je computer.
 5. Kies je televisie en gebruik de optie **Custom WGT** met het bestand uit `dist/`.
 6. Laat Apps2Samsung het bestand indien nodig opnieuw ondertekenen.
-7. Start **Lampa Personal Edition** op je tv.
+7. Start **Lampa Multilingual** op je tv.
 
 De persoonlijke versie gebruikt een andere Tizen-app-ID en kan naast de originele Lampa worden geïnstalleerd.
 
@@ -75,7 +85,7 @@ Controleer of het menu verschijnt, je met de afstandsbediening kunt navigeren en
 
 ## 5. Instellingen wijzigen
 
-Voer `npm run build:personal -- --builder-language nl` opnieuw uit, kies andere instellingen en installeer het nieuwe WGT-bestand.
+Voer `npm run build:multilingual -- --builder-language nl` opnieuw uit, kies andere instellingen en installeer het nieuwe WGT-bestand.
 
 ## Veiligheid
 
