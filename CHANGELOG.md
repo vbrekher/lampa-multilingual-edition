@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased — Lampa Multilingual product experience
+
+- Rebranded the public-facing product, Samsung widget title and primary package filename to **Lampa Multilingual** while retaining the old Tizen application ID and legacy CLI/output path for installed-user compatibility.
+- Rebuilt the GitHub README around 21 UI languages, Arabic/Urdu/Hebrew RTL, actual product differences, honest hardware limitations, a clear quick start and prominent gratitude to Yumata/the original Lampa team.
+- Added a complete static landing page under `docs/index.html`, ready for GitHub Pages `main:/docs` without GitHub Actions.
+- Created a responsive, three-language **local visual Builder** with language picker, optional TorrServer URL, parser/plugin controls, configuration review, real WGT compilation progress, cancellation, and download with SHA-256.
+- Implemented a loopback-only Builder API with same-origin token checks, no arbitrary shell commands or external personal WGT uploads.
+- Updated RU/NL/EN getting-started guides, security, contributions and local product-experience tests.
+- Physical Samsung installation/playback and native-speaker editorial certification remain separate external acceptance checks.
+
 ## Unreleased — language consistency
 
 - Localized builder prompts, help, warnings and validation errors into English, Russian and Dutch.
