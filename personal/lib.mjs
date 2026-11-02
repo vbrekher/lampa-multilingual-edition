@@ -75,7 +75,7 @@ export function localTizenHtml(original) {
   const marker='<script src="loader.js"></script>';
   if(original.split(marker).length!==2 || !original.includes('css/app.css') || !original.includes('vender/jquery/jquery.js'))
     throw new PersonalBuildError('UPSTREAM_INDEX');
-  return original.replace('<title>Lampa</title>','<title>Lampa Personal Edition</title>')
+  return original.replace('<title>Lampa</title>','<title>Lampa Multilingual</title>')
     .replace('<script src="http://www.youtube.com/iframe_api"></script>',
       '<script src="https://www.youtube.com/iframe_api"></script>')
     .replace(marker,'<script src="personal-config.js"></script>\n    <script src="app.min.js"></script>');
@@ -111,7 +111,7 @@ export function widgetManifest() {
   return [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="https://github.com/vbrekher/lampa-personal-edition" version="'+ID.version+'" viewmodes="maximized">',
-    '  <name>Lampa Personal Edition</name>',
+    '  <name>Lampa Multilingual</name>',
     '  <icon src="icon.png"/>',
     '  <content src="index.html"/>',
     '  <access origin="*" subdomains="true"/>',
