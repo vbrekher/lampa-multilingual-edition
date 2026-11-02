@@ -156,7 +156,7 @@ The Tizen application ID remains **L4mpaPers0.LampaPersonal** on purpose, to avo
 | Topic | Documentation |
 | --- | --- |
 | Samsung install and WGT signing | [Installation](docs/INSTALLATION.md) |
-| Russian walkthrough | [Русская инструкция](docs/README.ru.md) |
+| Russian walkthrough | [Russian guide](docs/README.ru.md) |
 | Dutch walkthrough | [Nederlandse handleiding](docs/README.nl.md) |
 | Troubleshooting | [Troubleshooting](docs/TROUBLESHOOTING.md) |
 | Compatibility and real-device limitations | [Compatibility](docs/COMPATIBILITY.md) |
