@@ -90,7 +90,7 @@ const server=createServer(async(req,res)=>{
     });
     report(proc.stdout,'stdout');report(proc.stderr,'stderr');
     proc.on('error',error=>{failure=String(error.message);});
-    proc.once('exit',(code,signal)=>{
+    proc.once('close',(code,signal)=>{
       cancelled=latestStatus==='cancelling';
       task=null;
       if(code===0&&!cancelled&&existsSync(output)){
